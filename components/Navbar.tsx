@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,6 +16,8 @@ const Navbar: React.FC = () => {
     }
   }, [isMobileMenuOpen]);
 
+  // Main navigation links excluding AI which is moved to the left
+  // Fixed: Added explicit type with optional icon property to resolve 'icon' property missing error when spreading navLinks into an array with an object that has an icon.
   const navLinks: { to: string; label: string; icon?: string }[] = [
     { to: '/', label: 'الرئيسية' },
     { to: '/journey/academic', label: 'الرحلة الأكاديمية' },
@@ -24,7 +27,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-      <nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] py-4 border-b border-white/20 shadow-lg bg-white/20 backdrop-blur-xl">
+      <nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] py-4 border-b border-white/20 shadow-lg bg-white/30 backdrop-blur-xl">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex items-center relative">
         
         {/* Right Section: Logo */}
@@ -48,15 +51,15 @@ const Navbar: React.FC = () => {
             const isActive = location.pathname === link.to;
             return (
               <Link
-                key={link.to}
-                to={link.to}
-                className={`text-sm font-bold transition-all px-4 py-2 rounded-xl whitespace-nowrap ${
-                  isActive 
-                    ? 'text-[#00c37a] bg-[#d1fae5]' 
-                    : 'text-gray-800 hover:text-black hover:bg-white/20'
-                }`}
+              key={link.to}
+              to={link.to}
+              className={`text-sm font-bold transition-all px-4 py-2 rounded-xl whitespace-nowrap ${
+                isActive 
+                ? 'text-[#00c37a] bg-[#d1fae5]' 
+                : 'text-gray-800 hover:text-black hover:bg-white/20'
+              }`}
               >
-                {link.label}
+             {link.label}
               </Link>
             );
           })}
@@ -74,7 +77,7 @@ const Navbar: React.FC = () => {
 
           <Link 
             to="/profile" 
-            className="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-xl text-gray-900 overflow-hidden hover:scale-110 transition-all active:scale-95 group"
+            className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-xl overflow-hidden hover:scale-110 transition-all active:scale-95 group"
           >
             👤
           </Link>
@@ -82,9 +85,9 @@ const Navbar: React.FC = () => {
           <div className="xl:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(true)} 
-              className="text-gray-900 p-2 bg-white/20 hover:bg-white/30 rounded-xl transition-all"
+              className="text-white p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#00c37a" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
@@ -99,11 +102,11 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, x: 200 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: 200 }}
-            className="fixed inset-0 z-[9999] w-screen h-screen flex flex-col bg-white/40 backdrop-blur-xl overflow-hidden"
+            className="fixed inset-0 z-[9999] w-screen h-screen flex flex-col bg-[#f0fdf4] overflow-hidden"
           >
             <div className="flex justify-between items-center px-6 py-8">
                <h2 className="text-2xl font-black text-gray-900">منصة <span className="text-[#00c37a]">سند</span></h2>
-               <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 bg-white/20 p-3 rounded-full">
+               <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 bg-white/20 p-3 rounded-full hover:bg-white/30">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" /></svg>
                </button>
             </div>
@@ -114,7 +117,7 @@ const Navbar: React.FC = () => {
                   key={link.to} 
                   to={link.to} 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="py-4 px-6 rounded-2xl bg-white/20 text-gray-900 font-bold flex items-center gap-4 hover:bg-white/30 transition-all"
+                  className="py-4 px-6 rounded-2xl bg-[#d1fae5] text-gray-900 font-bold flex items-center gap-4 hover:bg-[#00c37a]/10 hover:text-[#00c37a] transition-all"
                 >
                   {link.icon && <span>{link.icon}</span>}
                   <span className="text-lg">{link.label}</span>
