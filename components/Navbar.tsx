@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] navbar-blur py-4 border-b border-white/10 shadow-lg">
+<nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] py-4 border-b border-white/10 shadow-lg bg-white/30 backdrop-blur-xl">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex items-center relative">
         
         {/* Right Section: Logo */}
