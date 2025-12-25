@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-<nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] py-4 border-b border-white/10 shadow-lg bg-white/30 backdrop-blur-xl">
+      <nav dir="rtl" className="w-full fixed top-0 left-0 right-0 z-[150] py-4 border-b border-white/20 shadow-lg bg-white/30 backdrop-blur-xl">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex items-center relative">
         
         {/* Right Section: Logo */}
@@ -51,15 +51,15 @@ const Navbar: React.FC = () => {
             const isActive = location.pathname === link.to;
             return (
               <Link
-                key={link.to}
-                to={link.to}
-                className={`text-sm font-bold transition-all px-4 py-2 rounded-xl whitespace-nowrap ${
-                  isActive 
-                    ? 'text-[#00c37a] bg-white/10' 
-                    : 'text-gray-200 hover:text-white hover:bg-white/5'
-                }`}
+              key={link.to}
+              to={link.to}
+              className={`text-sm font-bold transition-all px-4 py-2 rounded-xl whitespace-nowrap ${
+                isActive 
+                ? 'text-[#00c37a] bg-white/40' 
+                : 'text-gray-800 hover:text-black hover:bg-white/20'
+              }`}
               >
-                {link.label}
+             {link.label}
               </Link>
             );
           })}
