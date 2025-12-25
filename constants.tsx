@@ -44,10 +44,10 @@ const generateTests = (collegeId: string, collegeName: string) => {
 };
 
 export const COLLEGES: College[] = [
-  { id: 'medicine', name: 'كلية الطب', icon: '', bg: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d', tests: generateTests('medicine', 'الطب') },
-  { id: 'applied-science', name: 'كلية العلوم التطبيقية', icon: '', bg: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d', tests: generateTests('applied-science', 'العلوم التطبيقية') },
-  { id: 'nursing', name: 'كلية التمريض', icon: '', bg: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528', tests: generateTests('nursing', 'التمريض') },
-  { id: 'business', name: 'كلية الأعمال', icon: '', bg: 'https://images.unsplash.com/photo-1497366216548-37526070297c', tests: generateTests('business', 'إدارة الأعمال') }
+  { id: 'medicine', name: 'كلية الطب', icon: '🏥', bg: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d', tests: generateTests('medicine', 'الطب') },
+  { id: 'applied-science', name: 'كلية العلوم التطبيقية', icon: '🔬', bg: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d', tests: generateTests('applied-science', 'العلوم التطبيقية') },
+  { id: 'nursing', name: 'كلية التمريض', icon: '🩺', bg: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528', tests: generateTests('nursing', 'التمريض') },
+  { id: 'business', name: 'كلية الأعمال', icon: '📊', bg: 'https://images.unsplash.com/photo-1497366216548-37526070297c', tests: generateTests('business', 'إدارة الأعمال') }
 ];
 
 export const JOURNEYS = {
