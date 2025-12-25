@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
                 </svg>
              </div>
              <div className="flex flex-col">
-               <span className="text-white font-black text-xl leading-none">منصة سند</span>
+               <span className="text-gray-900 font-black text-xl leading-none">منصة سند</span>
                <span className="text-[#00c37a] text-[10px] font-bold tracking-widest mt-1 uppercase">التعليمية</span>
              </div>
           </Link>
